@@ -1,0 +1,243 @@
+.article {
+	@include block;
+
+
+	&--loop {
+		margin-bottom: 45px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	&--ad {
+		text-align: center;
+		padding: 45px 0;
+		background: #f9f9f9;
+	}
+
+	&__header {
+		padding: 45px -webkit-calc((100% - 550px)/2) 20px;
+		padding: 45px calc((100% - 550px)/2) 20px;
+		border-bottom: 1px dotted rgba($color-lighter, .2);
+		position: relative;
+
+		&::before {
+			position: absolute;
+			width: 40px;
+			height: 40px;
+			left: -20px;
+			background: rgba($color-pink,.1);
+			border-radius: 50%;
+			content: '';
+			margin-top: -4px;
+		}
+		@media (max-width: $screen-sm-max) {
+			text-align: center;
+		}
+
+		@media (max-width: $screen-640) {
+			padding-left: $margin*2;
+			padding-right: $margin*2;
+		}
+		@media (max-width: $screen-xs) {
+			padding-left: $margin;
+			padding-right: $margin;
+		}
+	}
+
+	&__content {
+		padding: 25px -webkit-calc((100% - 550px)/2) 45px;
+		padding: 25px calc((100% - 550px)/2) 45px;
+		overflow: hidden;
+		position: relative;
+
+		p, ul, ol, table {
+			+ h2, + h3, + h4, + h5, + h6 {
+				margin-top: $margin*2;
+			}
+		}
+
+		> *:last-child {
+			.article--loop & {
+				margin-bottom: 0;
+			}
+		}
+
+		// .lead, p:nth-child(2), p:nth-child(2) strong {
+		// 	font-family: $font-slab;
+		// 	font-size: 20px;
+		// 	font-weight: 400;
+		// 	line-height: 1.5;
+		// 	letter-spacing: -0.02em;
+		// 	color: $color-darker;
+		// }
+
+		h2 {
+			@include heading-style();
+		}
+
+		// h3 {
+
+		// 	&::before {
+		// 		position: absolute;
+		// 		width: 3px;
+		// 		height: 36px;
+		// 		background: $color-pink;
+		// 		content: '';
+		// 		left: 0;
+		// 	}
+		// }
+
+		@media (max-width: $screen-640) {
+			padding-left: $margin*2;
+			padding-right: $margin*2;
+		}
+
+		@media (max-width: $screen-xs) {
+			padding-left: $margin;
+			padding-right: $margin;
+		}
+	}
+
+	&__title {
+		font-size: 30px;
+		line-height: 1.1;
+		margin-top: 0;
+
+		a {
+			color: $color-darker;
+  		background-position: 0 90%;
+  		background-repeat: no-repeat;
+  		background-size: 0 15px;
+  		@include linear-gradient(to bottom, transparent 50%, rgba($color-pink,.85) 50%);
+  		@include transition-duration(.3s);
+
+			&:hover {
+				text-decoration: none;
+				background-size: 100% 15px;
+			}
+		}
+
+		@media (max-width: $screen-640) {
+			font-size: 27px;
+		}
+
+		@media (max-width: $screen-xs) {
+			font-size: 24px;
+		}
+	}
+
+	&__meta {
+		font-size: 13px;
+		color: $color-lighter;
+
+		> div {
+			display: inline-block;
+			padding-right: 20px;
+		}
+
+		a {
+			color: $color-lighter;
+
+			&:hover {
+				color: $color-pink;
+			}
+		}
+
+		@media (max-width: $screen-640) {
+			.meta__category {
+				display: block;
+				margin-top: $margin/2;
+			}
+		}
+	}
+
+	ul {
+		li::before {
+			background: $color-pink;
+		}
+		ul li::before {
+			background: transparent;
+		}
+	}
+
+	&--error {
+		@media (max-width: $screen-sm-max) {
+			text-align: center;
+		}
+	}
+}
+
+.archive {
+	&__header {
+		text-align: center;
+	}
+}
+
+ h1.archive__title {
+	padding: $margin 0;
+	font-weight: 300;
+  position: relative;
+  @include linear-gradient(to bottom,
+      transparent 0%,
+      transparent 1px,
+      rgba($color-lighter, .2) 1px);
+  background-size: 2px 2px;
+  background-repeat: repeat-x;
+  background-position: center;
+  margin-bottom: 0;
+
+  span {
+  	background-color: $color-bg;
+  	padding: 0 $margin;
+  	display: inline-block;
+  }
+	}
+
+.archive__title--sub {
+	font-size: 18px;
+	font-style: normal;
+	color: $color-lighter;
+	display: block;
+	margin-top: 10px;
+}
+
+.icon {
+	display: inline-block;
+
+	&__meta {
+		width: 12px;
+		height: 13px;
+		background: url(../img/icon-sprites.svg) no-repeat;
+		margin-right: 5px;
+		vertical-align: -2px;
+
+		&--date {background-position: 0 0}
+		&--category {background-position: -12px 0}
+		&--comment {background-position: -24px 0}
+		&--supporter {background-position: -36px 0}
+		&--search {background-position: -48px 0}
+		&--popular {background-position: -60px 0}
+	}
+}
+
+.pagination {
+	margin-top: 30px;
+	@include display(flex);
+	@include justify-content(space-between);
+}
+
+.similar-post {
+	border-top: 1px dotted rgba($color-lighter, .2);
+	padding-top: $margin;
+	margin-top: $margin;
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.comments {
+	margin-top: $margin*2;
+}

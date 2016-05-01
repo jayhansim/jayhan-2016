@@ -1,0 +1,68 @@
+*, *::before, *::after {
+	@include box-sizing;
+}
+
+body {
+	background: $color-bg;
+	color: $color-darker;
+	font-size: 15px;
+	font-family: $font-system;
+	line-height: 1.8;
+	text-rendering: optimizedLegitibility;
+
+	.wf-active & {
+		font-family: $font;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $color-pink;
+	@include transition(all .1s linear);
+
+	&:hover {text-decoration: underline}
+}
+
+ul, ol {
+	padding: 0;
+
+	@at-root {
+		ol {
+			padding-left: $margin;
+		}
+		ul {
+			list-style: none;
+
+			ul {
+				margin-bottom: 0;
+			}
+
+			li {
+				position: relative;
+				padding-left: $margin;
+
+				&::before {
+					width: 6px;
+					height: 6px;
+					border: 1px solid $color-pink;
+					border-radius: 50%;
+					content: '';
+					display: inline-block;
+					position: absolute;
+					left: 2px;
+					top: 8px;
+				}
+			}
+		}
+	}
+}
+
+// setting the block element margin
+p, ul, ol, dl, table, h1, h2, h3, h4, h5, h6, blockquote, pre {
+	margin: 0 0 $margin;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}

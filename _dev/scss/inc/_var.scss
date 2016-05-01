@@ -1,0 +1,26 @@
+// Font
+$font-system: "RobotoLocal", "Helvetica Neue", Arial, sans-serif;
+$font-system-black: "RobotoLocal-black", "Helvetica Neue", Arial, sans-serif;
+$font: "Roboto", "Helvetica Neue", Arial, sans-serif;
+
+$font-system-slab: "RobotoSlab-Bold", serif;
+$font-slab: "Roboto Slab", serif;
+
+// Color
+$color: #465363;
+$color-lighter: #7d859f;
+$color-darker: #373f53;
+$color-pink: #e55888;
+$color-bg: #f4f4f4;
+
+// number
+$margin: 20px;
+
+// mq
+
+$screen-md 			: 992px;
+$screen-sm-max 	: $screen-md - 1px;
+$screen-sm 			: 768px;
+$screen-xs-max	: $screen-sm - 1px;
+$screen-640			: 640px;
+$screen-xs			: 480px;

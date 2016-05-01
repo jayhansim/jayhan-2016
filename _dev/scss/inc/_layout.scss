@@ -1,0 +1,42 @@
+.container {
+	max-width: 1010px;
+	padding: 0 15px;
+	margin: 0 auto;
+
+	&--main {
+		@include clearfix;
+		margin-bottom: 60px;
+	}
+}
+
+.main {
+	@include calc(width, "100% - 330px");
+	float: left;
+
+	&--full {
+		width: auto;
+		float: none;
+	}
+}
+
+.aside {
+	width: 300px;
+	float: right;
+}
+
+@media (max-width: $screen-sm-max) {
+	.main {
+		float: none;
+		width: auto;
+		margin-bottom: 60px;
+	}
+
+	.aside {
+		width: auto;
+		float: none;
+	}
+}
+
+.content {
+	min-height: 80vh;
+}
