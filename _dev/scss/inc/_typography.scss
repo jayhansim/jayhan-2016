@@ -1,30 +1,21 @@
 // accessing local Roboto
 // ref: https://jonsuh.com/blog/font-loading-with-font-events/
-@font-face {
-  font-family: "RobotoLocal";
-  src: local("Roboto-Regular");
-}
-
-@font-face {
-  font-family: "RobotoSlab-Bold";
-  src: local("RobotoSlab-Bold");
-}
 
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: $font-system-slab;
+	font-family: $font-system;
 	font-weight: 700;
 
 	.wf-active & {
-		font-family: $font-slab;
+		font-family: $font-poppins;
 	}
 }
 
 h1, h2 {
-	line-height: 1.1;
+	line-height: 1.3;
 }
 h3 {
-	line-height: 1.2;
+	line-height: 1.4;
 }
 
 h1, .h1 {font-size: 30px}

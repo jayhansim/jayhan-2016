@@ -1,17 +1,22 @@
 // Font
-$font-system: "RobotoLocal", "Helvetica Neue", Arial, sans-serif;
-$font-system-black: "RobotoLocal-black", "Helvetica Neue", Arial, sans-serif;
-$font: "Roboto", "Helvetica Neue", Arial, sans-serif;
+$font-system: "Helvetica Neue", Arial, sans-serif;
+$font: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 
-$font-system-slab: "RobotoSlab-Bold", serif;
-$font-slab: "Roboto Slab", serif;
+$font-poppins: "Poppins", "Helvetica Neue", Arial, sans-serif;
+
 
 // Color
-$color: #465363;
+$color: #242424;
 $color-lighter: #7d859f;
-$color-darker: #373f53;
+$color-darker: $color;
 $color-pink: #e55888;
-$color-bg: #f4f4f4;
+$color-bg: #eceff2;
+
+$color-purple: #554AE1;
+$color-teal: #3CDAA8;
+
+$color-dribbble: #EA4C89;
+$color-behance: #1882FF;
 
 // number
 $margin: 20px;

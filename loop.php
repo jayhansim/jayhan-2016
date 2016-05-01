@@ -1,24 +1,27 @@
 <main role="main" class="main">
 
+
   <div class="archive__header">
-  <?php /* If this is a category archive */ if (is_category()) { ?>
-    <h1 class="archive__title"><span><?php printf(__('%s'), single_cat_title('', false)); ?></span></h1>
-  <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-    <h1 class="archive__title"><span><?php printf(__('Articles tagged in &#8216;%s&#8217;'), single_tag_title('', false) ); ?></span></h1>
-  <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-    <h1 class="archive__title"><span><?php printf(_c('Archive for %s|Daily archive page'), get_the_time(__('F jS, Y'))); ?></span></h1>
-  <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-    <h1 class="archive__title"><span><?php printf(_c('Archive for %s|Monthly archive page'), get_the_time(__('F, Y'))); ?></span></h1>
-  <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-    <h1 class="archive__title"><span><?php printf(_c('Archive for %s|Yearly archive page'), get_the_time(__('Y'))); ?></span></h1>
-  <?php /* If this is an author archive */ } elseif (is_author()) { ?>
-    <h1 class="archive__title"><span><?php _e('Author Archive'); ?></span></h1>
-  <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-    <h1 class="archive__title"><span><?php _e('Blog Archives'); ?></span></h1>
-  <?php /* If this is a paged archive */ } elseif (is_search()) { ?>
-    <h1 class="archive__title"><span><?php /* Search Count */ $allsearch = &new WP_Query("s=$s&showposts=-1"); $key = wp_specialchars($s, 1); $count = $allsearch->post_count;
-      echo $key . ' <i class="archive__title--sub">' . $count . ' results </i>'; wp_reset_query(); ?></span></h1>
-  <?php } ?>
+    <?php if(is_front_page()){ ?>
+      <h1 class="archive__title">Latest Articles</h1>
+    <?php /* If this is a category archive */ } elseif (is_category()) { ?>
+      <h1 class="archive__title"><span><?php printf(__('%s'), single_cat_title('', false)); ?></span></h1>
+    <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
+      <h1 class="archive__title"><span><?php printf(__('Articles tagged in &#8216;%s&#8217;'), single_tag_title('', false) ); ?></span></h1>
+    <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
+      <h1 class="archive__title"><span><?php printf(_c('Archive for %s|Daily archive page'), get_the_time(__('F jS, Y'))); ?></span></h1>
+    <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
+      <h1 class="archive__title"><span><?php printf(_c('Archive for %s|Monthly archive page'), get_the_time(__('F, Y'))); ?></span></h1>
+    <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
+      <h1 class="archive__title"><span><?php printf(_c('Archive for %s|Yearly archive page'), get_the_time(__('Y'))); ?></span></h1>
+    <?php /* If this is an author archive */ } elseif (is_author()) { ?>
+      <h1 class="archive__title"><span><?php _e('Author Archive'); ?></span></h1>
+    <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+      <h1 class="archive__title"><span><?php _e('Blog Archives'); ?></span></h1>
+    <?php /* If this is a paged archive */ } elseif (is_search()) { ?>
+      <h1 class="archive__title"><span><?php /* Search Count */ $allsearch = &new WP_Query("s=$s&showposts=-1"); $key = wp_specialchars($s, 1); $count = $allsearch->post_count;
+        echo $key . ' <i class="archive__title--sub">' . $count . ' results </i>'; wp_reset_query(); ?></span></h1>
+    <?php } ?>
   </div>
 
   <?php if(have_posts()) : ?>
@@ -33,7 +36,7 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
       <header class="article__header">
-        <h2 class="article__title">
+        <h2 data-title="<?php the_title(); ?>" class="article__title">
           <a href="<?php the_permalink(); ?>">
             <?php the_title(); ?>
           </a>

@@ -1,16 +1,22 @@
 .container {
-	max-width: 1010px;
-	padding: 0 15px;
+	max-width: 1300px;
+	padding: 0 80px;
 	margin: 0 auto;
 
 	&--main {
 		@include clearfix;
+		padding-bottom: 60px;
 		margin-bottom: 60px;
+		background-color: #fff;
 	}
 }
 
+.content {
+	border-top: 1px solid $color-bg;
+}
+
 .main {
-	@include calc(width, "100% - 330px");
+	@include calc(width, "100% - 360px");
 	float: left;
 
 	&--full {

@@ -1,6 +1,6 @@
 // Google Web Font
 WebFontConfig = {
-	google: { families: [ 'Open+Sans:400,700:latin', 'Poppins:700:latin']}
+	google: { families: [ 'Open+Sans:400,700:latin', 'Poppins:500,700:latin']}
 };
 (function() {
   var wf = document.createElement('script');
