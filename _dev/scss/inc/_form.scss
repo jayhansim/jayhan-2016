@@ -4,7 +4,7 @@
 	background: $color-pink;
 	color: #fff;
 	display: inline-block;
-	height: 40px;
+	height: 50px;
 	padding: 9px 20px;
 
 	@at-root button, input[type="submit"] {
@@ -21,19 +21,18 @@
 		top: 0;
 		right: 0;
 		background-color: transparent;
-		color: $color-lighter;
 
-		&::before {
-			content: '|';
-			position: relative;
-			left: -15px;
-			top: -1px;
-			opacity: .3;
+		svg {
+			@include transform(translate(2px, 4px));
 		}
 
 		&:hover {
 			background-color: inherit;
-			color: $color-pink;
+			color: $color-purple;
+
+			svg g {
+				fill: $color-purple;
+			}
 		}
 	}
 }
@@ -55,19 +54,19 @@ button.btn {
 	position: relative;
 }
 .form-control {
-	border-radius: 2px;
-	background: #fff;
-	box-shadow: 0 2px 4px rgba(0,0,0,.1);
-	height: 40px;
+	background: $color-bg;
+	height: 50px;
 	border: none;
 	padding: 9px 15px;
 	display: block;
 	width: 100%;
 	-webkit-appearance: none;
+	border-bottom: 1px solid transparent;
+	@include transition(all .1s linear);
 
 	&:focus, &:active {
 		outline: 0;
-		box-shadow: 0 2px 4px rgba(0,0,0,.2);
+		border-bottom: 1px solid $color-purple;
 	}
 
 	#searchform & {

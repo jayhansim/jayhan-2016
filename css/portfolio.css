@@ -6,7 +6,7 @@
   -ms-transform: rotate(-8deg) translateX(-118px) translateY(16px);
   -o-transform: rotate(-8deg) translateX(-118px) translateY(16px);
   transform: rotate(-8deg) translateX(-118px) translateY(16px);
-  color: #7d859f; }
+  color: #687179; }
   @media (max-width: 991px) {
     .header__description {
       margin-bottom: -20px;
@@ -22,7 +22,7 @@
 .portfolio__header {
   padding: 30px -webkit-calc((100% - 880px)/2);
   padding: 30px calc((100% - 880px)/2);
-  border-top: 1px dotted rgba(125, 133, 159, 0.2); }
+  border-top: 1px dotted rgba(104, 113, 121, 0.2); }
   @media (min-width: 480px) {
     .portfolio__header {
       display: -webkit-box;
@@ -157,7 +157,7 @@
       color: #fff; }
   .shot img {
     display: block;
-    box-shadow: 0 1px 3px rgba(125, 133, 159, 0.2); }
+    box-shadow: 0 1px 3px rgba(104, 113, 121, 0.2); }
   @media (max-width: 768px) {
     .shot {
       width: -webkit-calc(50% - 20px);
@@ -176,7 +176,7 @@
     margin-bottom: 10px;
     padding-left: 0; }
   .social--portfolio a {
-    color: #7d859f; }
+    color: #687179; }
     .social--portfolio a:hover {
       text-decoration: none; }
   .social--portfolio .svg-icon__social {

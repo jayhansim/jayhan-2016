@@ -11,6 +11,14 @@ add_theme_support('menus');
 // if ( function_exists('register_sidebar') )
     // register_sidebar();
 
+/*------------------------------------*\
+  Menu
+\*------------------------------------*/
+register_nav_menus(
+  array(
+  'main-menu'=>__('Main Menu'),
+  )
+);
 
 /*------------------------------------*\
   Sidebar

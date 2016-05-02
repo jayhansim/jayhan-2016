@@ -7,24 +7,14 @@
 		color: $color-lighter;
 
 		&:hover {
-			color: $color-pink;
+			color: $color-purple;
 			text-decoration: none;
 		}
 	}
 
 	&__block {
-		padding: 30px 0;
+		padding: 20px 0;
 		position: relative;
-
-		&::after {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			content: '';
-			background-color: rgba($color-lighter, .3);
-			width: 25px;
-			height: 1px;
-		}
 
 		&:first-child {
 			padding-top: 0;
@@ -69,25 +59,6 @@
 
 	li {
 		width: 50%;
-	}
-}
-
-.aside__title {
-
-	&::before {
-		width: 12px;
-		height: 13px;
-		background-image: url(../img/icon-sprites.svg);
-		background-repeat: no-repeat;
-		content: '';
-		display: inline-block;
-		margin-right: 8px;
-		vertical-align: -1px;
-
-		#text-4 & {background-position: -36px 0} //.aside__block--supporters
-		.widget_categories & {background-position: -12px 0} //.aside__block--category
-		.widget_search & {background-position: -48px 0} //.aside__block--search
-		.widget_rrm_popular_posts & {background-position: -60px 0} //.aside__block--popular
 	}
 }
 

@@ -5,7 +5,6 @@
 	<!-- /.container--main -->
 
 	<div class="footer__deco">
-		<a href="#" title="to top"><?php bloginfo('name'); ?></a>
 	</div>
 	<footer class="footer" role="contentinfo">
 		<div class="container">

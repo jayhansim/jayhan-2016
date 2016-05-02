@@ -39,14 +39,29 @@
 
 		<!-- HEADER -->
 		<header class="header" role="banner">
+
+			<!-- Logo -->
 			<a href="<?php bloginfo("url"); ?>" class="header__title">
 				<?php bloginfo('name'); ?>
 			</a>
+
+			<!-- Menu -->
+			<nav role="navigation" class="header__nav">
+				<?php wp_nav_menu(
+	    		array(
+	  				'theme_location' => 'main-menu',
+	  				'container' => ''
+	    		)
+	    	); ?>
+			</nav>
+
+
+
 		</header>
 
 		<?php if ( is_front_page() && !is_paged()): ?>
 		  <h3 class="welcome">
-		    Hi, my name is Jayhan Sim, I’m a product designer working in Singapore. View my works on <A href="https://www.behance.net/jayhan" class="link--behance" rel="external">Behance</a> and <a href="https://dribbble.com/jayhan" class="link-dribbble" rel="external">Dribbble</a>.
+		    Hi, my name is Jayhan Sim, I’m a product designer working in Singapore. View my works on <A href="https://www.behance.net/jayhan" class="link--behance" rel="external">Behance</a> and <a href="https://dribbble.com/jayhan" class="link--dribbble" rel="external">Dribbble</a>.
 		  </h3>
 		<?php endif ;?>
 
