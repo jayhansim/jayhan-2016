@@ -1,19 +1,24 @@
 // button
 .btn {
-	border-radius: 2px;
-	background: $color-pink;
-	color: #fff;
+	font-weight: 700;
 	display: inline-block;
-	height: 50px;
-	padding: 9px 20px;
+	border: 2px solid $color-purple;
+	color: $color-purple;
+	height: 40px;
+	line-height: 36px;
+	font-size: 14px;
+	padding: 0 24px;
+	border-radius: 50px;
+
+	&:hover {
+		background: $color-purple;
+		color: #fff;
+		text-decoration: none;
+		box-shadow: 0 3px 3px rgba($color-purple,.4);
+	}
 
 	@at-root button, input[type="submit"] {
 		border: none;
-	}
-
-	&:hover {
-		text-decoration: none;
-		background-color: darken($color-pink,5);
 	}
 
 	&__search {
@@ -34,14 +39,6 @@
 				fill: $color-purple;
 			}
 		}
-	}
-}
-
-.pagination a {
-	@extend .btn;
-
-	&:last-child {
-		margin-left: auto;
 	}
 }
 

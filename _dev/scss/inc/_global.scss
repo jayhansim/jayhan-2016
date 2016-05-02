@@ -4,10 +4,10 @@
 
 body {
 	background: $color-bg;
-	color: $color-darker;
+	color: $color;
 	font-size: 16px;
 	font-family: $font-system;
-	line-height: 1.8;
+	line-height: 1.9;
 	//text-rendering: optimizedLegitibility;
 	//-webkit-font-smoothing: antialiased;
 
@@ -65,4 +65,14 @@ p, ul, ol, dl, table, h1, h2, h3, h4, h5, h6, blockquote, pre {
 img {
 	max-width: 100%;
 	height: auto;
+}
+
+::-moz-selection {
+	background-color: $color-purple;
+	color: #fff;
+}
+
+::selection {
+	background-color: $color-purple;
+	color: #fff;
 }

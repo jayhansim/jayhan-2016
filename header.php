@@ -59,10 +59,5 @@
 
 		</header>
 
-		<?php if ( is_front_page() && !is_paged()): ?>
-		  <h3 class="welcome">
-		    Hi, my name is Jayhan Sim, I’m a product designer working in Singapore. View my works on <A href="https://www.behance.net/jayhan" class="link--behance" rel="external">Behance</a> and <a href="https://dribbble.com/jayhan" class="link--dribbble" rel="external">Dribbble</a>.
-		  </h3>
-		<?php endif ;?>
 
 		<div class="content">

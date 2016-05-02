@@ -14,7 +14,7 @@
 	&__nav {
 		position: absolute;
 		right: 80px;
-		top: 20px;
+		top: 30px;
 		font-family: $font-poppins;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -47,6 +47,7 @@
 
 .welcome {
 	margin-bottom: 90px;
+	font-size: 18px;
 	@include calc(max-width, '100% - 330px');
 }
 

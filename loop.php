@@ -43,21 +43,18 @@
         </h2>
         <div class="article__meta">
           <div class="meta meta__postdate">
-            <i class="icon icon__meta icon__meta--date"></i>
             <time><?php the_time('d M y'); ?></time>
           </div>
-          <div class="meta meta__comment">
-            <i class="icon icon__meta icon__meta--comment"></i>
-            <span class="disqus-comment-count" data-disqus-url="<?php the_permalink(); ?>">0 Comments</span>
-          </div>
           <div class="meta meta__category">
-            <i class="icon icon__meta icon__meta--category"></i>
             <?php the_category(', '); ?>
+          </div>
+          <div class="meta meta__comment">
+            <span class="disqus-comment-count" data-disqus-url="<?php the_permalink(); ?>">0 Comments</span>
           </div>
         </div>
       </header>
       <div class="article__content">
-        <?php the_content(' Continue reading &raquo;'); ?>
+        <?php the_content('Continue reading'); ?>
       </div>
       <?php if ($adcounter == 0) : ?>
       <div class="article--ad">
@@ -82,10 +79,6 @@
     <?php $adcounter++; ?>
     <?php endwhile; ?>
 
-    <div class="pagination">
-      <?php previous_posts_link( 'Previous Page' ); ?>
-      <?php next_posts_link( 'Next Page', '' ); ?>
-    </div>
   <?php else : ?>
     <article class="article article--loop article--error">
       <header class="article__header"><h2 class="article__title"><?php _e("Sorry, but you are looking for something that isn&#8217;t here."); ?></h2></header>
@@ -97,5 +90,7 @@
     </article>
 
   <?php endif; ?>
+
+  <?php get_template_part('pagination'); ?>
 
 </main>

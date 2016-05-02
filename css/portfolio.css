@@ -143,7 +143,7 @@
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-    background-color: rgba(36, 36, 36, 0.9); }
+    background-color: rgba(46, 51, 57, 0.9); }
     .shot:hover a::after {
       border-width: 2px;
       border-color: rgba(229, 88, 136, 0.7);

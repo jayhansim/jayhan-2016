@@ -5,47 +5,38 @@
     <?php
       $classes = array(
         'article',
-      ' article--loop'
+      ' article--single'
       );
     ?>
     <?php while(have_posts()) : the_post(); ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
       <header class="article__header">
-        <h2 class="article__title">
-          <a href="<?php the_permalink(); ?>">
+        <h1 class="article__title" data-title="<?php the_title(); ?>">
+          <span>
             <?php the_title(); ?>
-          </a>
-        </h2>
+          </span>
+        </h1>
         <div class="article__meta">
           <div class="meta meta__postdate">
-            <i class="icon icon__meta icon__meta--date"></i>
             <time><?php the_time('d M y'); ?></time>
           </div>
-          <div class="meta meta__comment">
-            <i class="icon icon__meta icon__meta--comment"></i>
-            <span class="disqus-comment-count" data-disqus-url="<?php the_permalink(); ?>">0 Comments</span>
-          </div>
           <div class="meta meta__category">
-            <i class="icon icon__meta icon__meta--category"></i>
             <?php the_category(', '); ?>
           </div>
+          <div class="meta meta__comment">
+            <span class="disqus-comment-count" data-disqus-url="<?php the_permalink(); ?>">0 Comments</span>
+          </div>
+
         </div>
       </header>
       <div class="article__content">
 
-        <div class="article__content--ad--top">
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <!-- 468x15 -->
-          <ins class="adsbygoogle"
-               style="display:inline-block;width:468px;height:15px"
-               data-ad-client="ca-pub-8642281896248767"
-               data-ad-slot="2515312907"></ins>
-          <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        </div>
         <?php the_content(); ?>
+
+        <?php echo do_shortcode('[ssboost]'); ?>
+
+        <?php similar_posts(); ?>
 
         <div class="article__content--ad">
           <!-- jayhan-midrec -->
@@ -58,8 +49,8 @@
           </script>
         </div>
 
-        <?php echo do_shortcode('[ssboost]'); ?>
-        <?php similar_posts(); ?>
+
+
       </div>
     </article>
 

@@ -14,11 +14,12 @@
 
 .content {
 	border-top: 1px solid $color-bg;
+	@include display(flex);
 }
 
 .main {
 	@include calc(width, "100% - 360px");
-	float: left;
+	margin-right: 60px;
 
 	&--full {
 		width: auto;
@@ -27,8 +28,9 @@
 }
 
 .aside {
-	width: 300px;
-	float: right;
+	width: 360px;
+	padding-top: 60px;
+	padding-left: 60px;
 }
 
 @media (max-width: $screen-sm-max) {
@@ -45,5 +47,5 @@
 }
 
 .content {
-	min-height: 80vh;
+	min-height: 40vh;
 }
