@@ -1,6 +1,6 @@
 .container {
 	max-width: 1300px;
-	padding: 0 80px;
+	padding: 0 60px;
 	margin: 0 auto;
 
 	&--main {
@@ -10,16 +10,27 @@
 		background-color: #fff;
 		position: relative;
 	}
+
+	@media (max-width: $screen-xs-max) {
+		padding: 0 20px;
+	}
 }
 
 .content {
 	border-top: 1px solid $color-bg;
-	@include display(flex);
+
+	@media (min-width: $screen-md) {
+		@include display(flex);
+	}
+
 }
 
 .main {
-	@include calc(width, "100% - 360px");
-	margin-right: 60px;
+
+	@media (min-width: $screen-md) {
+		@include calc(width, "100% - 360px");
+		padding-right: 60px;
+	}
 
 	&--full {
 		width: auto;
@@ -28,22 +39,14 @@
 }
 
 .aside {
-	width: 360px;
+
+	@media (min-width: $screen-md) {
+		width: 360px;
+		padding-left: 60px;
+	}
+
 	padding-top: 60px;
-	padding-left: 60px;
-}
 
-@media (max-width: $screen-sm-max) {
-	.main {
-		float: none;
-		width: auto;
-		margin-bottom: 60px;
-	}
-
-	.aside {
-		width: auto;
-		float: none;
-	}
 }
 
 .content {

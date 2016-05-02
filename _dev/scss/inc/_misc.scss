@@ -6,25 +6,34 @@ hr {
 }
 
 blockquote {
-	background: $color-pink;
-	padding: 20px 0 ;
+	background: $color-purple;
+	padding: 30px;
+	box-shadow: 4px 4px 0 $color-bg;
 	color: #fff;
 
+	&.with-title {
+		margin-top: 50px;
+	}
+
+	.blockquote__title {
+		margin-top: -50px;
+		@extend .h2;
+	}
+
 	.article & {
-		box-shadow: 200px 0 0 $color-pink, -200px 0 0 $color-pink;
+		//box-shadow: 200px 0 0 $color-pink, -200px 0 0 $color-pink;
 	}
 
 	&.blockquote--light {
-		background: #f8f8f8;
+		background: $color-bg;
 		color: $color;
 
 		.article & {
-			box-shadow: 200px 0 0 #f8f8f8, -200px 0 0 #f8f8f8;
 
 			footer {
 				color: $color-lighter;
 				a {
-					color: $color-pink;
+					color: $color-purple;
 				}
 			}
 		}
@@ -33,10 +42,15 @@ blockquote {
 	footer {
 		margin-top: $margin/2;
 		font-size: 13px;
-		color: #ffcdde;
+		text-align: right;
+		color: rgba(#fff, .5);
 
 		&::before {
-			content: '- ';
+			content: 'Source: ';
+		}
+
+		a {
+			color: #fff;
 		}
 	}
 
@@ -55,22 +69,25 @@ blockquote {
 
 pre {
 	border-top: 1px solid #eed3dc;
-	background-color: #f8f8f8;
+	white-space: pre-wrap;
+	background-color: lighten($color-bg,3);
 	-webkit-overflow-scrolling: touch;
 	@include background-image(
 		linear-gradient(to bottom,
-										transparent 29px,
-										#c2d4e9 29px,
-										transparent 30px,
-										transparent 59px,
-										#eed3dc 59px
+										transparent 39px,
+										#c2d4e9 39px,
+										transparent 40px,
+										transparent 79px,
+										#eed3dc 79px
 										));
-	background-size: 60px 60px;
+	background-size: 80px 80px;
 	font-family: monospace;
-	line-height: 30px;
+	line-height: 40px;
+	padding: 0 20px;
 	font-size: 14px;
 	box-shadow: 200px 0 0 #f8f8f8, -200px 0 0 #f8f8f8;
 	-moz-tab-size: 4;
   -o-tab-size:   4;
   tab-size:      4;
+  margin: $margin*2 0;
 }

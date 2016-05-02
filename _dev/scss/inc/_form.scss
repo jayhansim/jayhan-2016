@@ -9,6 +9,7 @@
 	font-size: 14px;
 	padding: 0 24px;
 	border-radius: 50px;
+	background-color: transparent;
 
 	&:hover {
 		background: $color-purple;
@@ -18,11 +19,25 @@
 	}
 
 	@at-root button, input[type="submit"] {
-		border: none;
+		@include transition(all .1s);
+	}
+
+	&-white {
+		border-color: #fff;
+		color: #fff;
+
+		&:hover {
+			background: #fff;
+			color: $color;
+			box-shadow: 0 3px 3px rgba($color,.4);
+		}
 	}
 
 	&__search {
 		position: absolute;
+		height: 100%;
+		padding: 0 15px;
+		border: none;
 		top: 0;
 		right: 0;
 		background-color: transparent;

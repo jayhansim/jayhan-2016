@@ -48,9 +48,6 @@
           <div class="meta meta__category">
             <?php the_category(', '); ?>
           </div>
-          <div class="meta meta__comment">
-            <span class="disqus-comment-count" data-disqus-url="<?php the_permalink(); ?>">0 Comments</span>
-          </div>
         </div>
       </header>
       <div class="article__content">

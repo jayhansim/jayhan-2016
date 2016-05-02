@@ -19,29 +19,19 @@
 		padding: 0 0 30px;
 		position: relative;
 
-		@media (max-width: $screen-sm-max) {
-			text-align: center;
-		}
-
-		@media (max-width: $screen-640) {
-			padding-left: $margin*2;
-			padding-right: $margin*2;
-		}
-		@media (max-width: $screen-xs) {
-			padding-left: $margin;
-			padding-right: $margin;
-		}
+		// @media (max-width: $screen-sm-max) {
+		// 	text-align: center;
+		// }
 	}
 
 	&__content {
-		overflow: hidden;
 		position: relative;
 
 		.article--loop & {
 			padding-bottom: 60px;
 		}
 
-		p, ul, ol, table {
+		p, ul, ol, table, div, .adsbygoogle, script {
 			+ h2, + h3, + h4, + h5, + h6 {
 				margin-top: $margin*2;
 			}
@@ -77,16 +67,6 @@
 		// 		left: 0;
 		// 	}
 		// }
-
-		@media (max-width: $screen-640) {
-			padding-left: $margin*2;
-			padding-right: $margin*2;
-		}
-
-		@media (max-width: $screen-xs) {
-			padding-left: $margin;
-			padding-right: $margin;
-		}
 	}
 
 	&__title {
@@ -166,12 +146,12 @@
 			}
 		}
 
-		@media (max-width: $screen-640) {
-			.meta__category {
-				display: block;
-				margin-top: $margin/2;
-			}
-		}
+		// @media (max-width: $screen-640) {
+		// 	.meta__category {
+		// 		display: block;
+		// 		margin-top: $margin/2;
+		// 	}
+		// }
 	}
 
 	ul {
@@ -192,7 +172,7 @@
 	&--ad {
 		text-align: center;
 		padding: 45px 0;
-		background: #f9f9f9;
+		border-top: 1px solid $color-bg;
 	}
 
 	&__content--ad--top {
@@ -215,8 +195,11 @@
 		background: #fff;
   	display: inline-block;
   	@include transform(translateY(-25px));
-  	padding-right: 80px;
   	margin-bottom: -25px;
+
+  	@media (min-width: $screen-md) {
+  		padding-right: 80px;
+  	}
 
   	span {
   		position: relative;
@@ -225,7 +208,6 @@
 
   	&::after {
 			content: attr(data-title);
-			padding-right: 80px;
 			color: #ddd;
 			position: absolute;
 			z-index: 1;
@@ -239,6 +221,10 @@
 			-webkit-text-fill-color: transparent;
 			-webkit-background-clip: text;
 			opacity: .7;
+
+			@media (min-width: $screen-md) {
+				padding-right: 80px;
+			}
 		}
 
 		&::before {
@@ -247,7 +233,7 @@
 			width: 24px;
 			height: 4px;
 			content: '';
-			left: -95px;
+			left: -75px;
 			top: 20px;
 			opacity: 1;
 	  }
@@ -264,6 +250,7 @@
 	font-size: 14px;
 	padding: 0 24px;
 	border-radius: 50px;
+	margin-top: 20px;
 
 	&:hover {
 		background: $color-purple;
@@ -280,12 +267,17 @@
 .archive__title {
  	font-size: 16px;
  	font-weight: 500;
+ 	color: $color-lighter;
   position: relative;
+  padding-right: 20px;
   margin: -10px 0 0;
-  padding-right: 80px;
   background: #fff;
   display: inline-block;
   @include transform(translateY(-80%));
+
+  @media (min-width: $screen-md) {
+		padding-right: 80px;
+	}
 
   &::before {
   	position: absolute;
@@ -294,7 +286,7 @@
 		height: 4px;
 		position: absolute;
 		content: '';
-		left: -92px;
+		left: -72px;
 		top: 50%;
 		@include transform(translateY(-50%));
   }

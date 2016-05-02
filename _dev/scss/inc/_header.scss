@@ -13,21 +13,12 @@
 
 	&__nav {
 		position: absolute;
-		right: 80px;
-		top: 30px;
+		right: 60px;
+		top: 25px;
 		font-family: $font-poppins;
 		font-weight: 700;
 		text-transform: uppercase;
 		font-size: 14px;
-
-		a {
-			color: $color-lighter;
-
-			&:hover {
-				color: $color-purple;
-				text-decoration: none;
-			}
-		}
 
 		li {
 			display: inline-block;
@@ -39,6 +30,18 @@
 
 			&:before {
 				display: none;
+			}
+		}
+
+		@media (max-width: $screen-xs-max) {
+			right: 20px;
+
+			li:nth-child(2){
+				display: none;
+			}
+
+			li:not(:first-child) {
+				margin-left: 15px;
 			}
 		}
 	}

@@ -50,6 +50,12 @@
 			margin-bottom: 0;
 		}
 	}
+
+	@media (max-width: $screen-sm-max) {
+		border-left: none;
+		border-top: 2px solid $color-purple;
+		margin-top: 30px;
+	}
 }
 
 .li-cats, .widget_categories ul {
@@ -161,17 +167,22 @@
 
 .social {
 	margin-bottom: 0;
+	margin-top: 20px;
 
 	.jayhan-widget & {
 		height: 24px;
 	}
 
 	li {
+		padding-left: 0;
 
-		.jayhan-widget & {
+		.aside & {
 			display: inline-block;
-			padding: 0 10px;
 			margin-bottom: 0;
+
+			&:not(:last-child) {
+				padding-right: 20px;
+			}
 		}
 
 		&::before{
@@ -187,7 +198,8 @@
 			&:hover {
 				svg {
 					fill: $color-pink;
-					&.icon-dribbble { fill: #ea4c89}
+					&.icon-behance {fill: $color-behance}
+					&.icon-dribbble { fill: $color-dribbble}
 					&.icon-facebook { fill: #3b5998}
 					&.icon-twitter { fill: #55acee}
 					&.icon-linkedin { fill: #0976b4}
