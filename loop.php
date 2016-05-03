@@ -36,6 +36,13 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
       <header class="article__header">
+        <div class="article__thumbnail">
+          <a href="<?php the_permalink(); ?>">
+            <?php if ( has_post_thumbnail() ) {
+            the_post_thumbnail('full');
+            } ?>
+          </a>
+        </div>
         <h2 data-title="<?php the_title(); ?>" class="article__title">
           <a href="<?php the_permalink(); ?>">
             <?php the_title(); ?>
@@ -46,7 +53,7 @@
             <time><?php the_time('d M y'); ?></time>
           </div>
           <div class="meta meta__category">
-            <?php the_category(', '); ?>
+            . <?php the_category(', '); ?>
           </div>
         </div>
       </header>

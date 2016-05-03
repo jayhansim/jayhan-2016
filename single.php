@@ -22,12 +22,18 @@
             <time><?php the_time('d M y'); ?></time>
           </div>
           <div class="meta meta__category">
-            <?php the_category(', '); ?>
+            . <?php the_category(', '); ?>
           </div>
 
         </div>
       </header>
       <div class="article__content">
+
+        <div class="article__thumbnail">
+          <?php if ( has_post_thumbnail() ) {
+            the_post_thumbnail('full');
+          } ?>
+        </div>
 
         <?php the_content(); ?>
 
