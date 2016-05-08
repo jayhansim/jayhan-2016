@@ -268,23 +268,26 @@
 
 .single-post {
 	.article__content {
-		> p:first-of-type {
-			font-size: 120%;
-			position: relative;
-			padding-bottom: $margin;
 
-			&:after {
-				content: '';
-				position: absolute;
-				width: 24px;
-				height: 4px;
-				background-color: $color-purple;
-				left: 0;
-				top: 100%;
-			}
+		.article__thumbnail {
+			+ p {
+				font-size: 120%;
+				position: relative;
+				padding-bottom: $margin;
 
-			@media (max-width: $screen-xs-max) {
-				font-size: 110%;
+				&:after {
+					content: '';
+					position: absolute;
+					width: 24px;
+					height: 4px;
+					background-color: $color-purple;
+					left: 0;
+					top: 100%;
+				}
+
+				@media (max-width: $screen-xs-max) {
+					font-size: 110%;
+				}
 			}
 		}
 	}

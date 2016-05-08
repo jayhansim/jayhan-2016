@@ -28,12 +28,11 @@
         </div>
       </header>
       <div class="article__content">
-
+        <?php if ( has_post_thumbnail() ): ?>
         <div class="article__thumbnail">
-          <?php if ( has_post_thumbnail() ) {
-            the_post_thumbnail('full');
-          } ?>
+          <?php the_post_thumbnail('full'); ?>
         </div>
+        <?php endif; ?>
 
         <?php the_content(); ?>
 

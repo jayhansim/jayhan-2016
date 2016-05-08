@@ -518,11 +518,11 @@ h6, .h6 {
     text-decoration: none;
     box-shadow: 0 3px 3px rgba(85, 74, 225, 0.4); }
 
-.single-post .article__content > p:first-of-type {
+.single-post .article__content .article__thumbnail + p {
   font-size: 120%;
   position: relative;
   padding-bottom: 20px; }
-  .single-post .article__content > p:first-of-type:after {
+  .single-post .article__content .article__thumbnail + p:after {
     content: '';
     position: absolute;
     width: 24px;
@@ -531,7 +531,7 @@ h6, .h6 {
     left: 0;
     top: 100%; }
   @media (max-width: 767px) {
-    .single-post .article__content > p:first-of-type {
+    .single-post .article__content .article__thumbnail + p {
       font-size: 110%; } }
 
 .wp-caption-text {
